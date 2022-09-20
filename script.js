@@ -234,3 +234,62 @@
 // circle();
 // triangle();
 // square();
+
+// Object oriented programming ES6
+//oops before ES6
+
+// let person1 ={
+    // firstName : 'jawad',
+    // lastName : "shaikh",
+    // 'last name' : 'shaikh', //if u want space u have to write inside quote
+    // age : 25,
+
+    //making method
+    // fullName : function(){
+        // console.log(this.firstName + " " + this.lastName); //for accesing property within object
+    // }
+// };
+
+//diff ways to create object
+
+// let person2 = {}; //leaving it empty and adding value and property later out side object
+// let object3 = new Object();
+
+// person1.fullName();
+
+// person1.age = 30;  // for changing value
+
+// console.log(person1.firstName); // . notation
+// console.log(person1['last name']); // array notation for property with space
+// console.log(person1.lastName);
+// console.log(person1.age);
+
+//for adding proerty/method to object 
+// person1.height = 5.6;
+// console.log(person1);
+
+// person1.sayHi = function(){
+//     alert("hi");
+// }
+// console.log(person1);
+
+//oops before ES6 // clas was not there // we use constructor function 
+
+// function Person(first, last, a){
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.age = a;
+
+//     this.sayHi = function(){
+//         console.log("hi");
+//     }
+//     this.chnageAge = function(newAge){
+//         this.age = newAge;
+//     }
+// };
+
+// let person1 = new Person("JAWAD", "SHAIKH", 19);
+// person1.chnageAge(23);
+// let person2 = new Person("HAMZA", "SHAIKH", 20);
+// console.log(person1);
+// console.log(person2);
