@@ -293,3 +293,352 @@
 // let person2 = new Person("HAMZA", "SHAIKH", 20);
 // console.log(person1);
 // console.log(person2);
+
+//prototype and inheritence
+
+// let person1 = {};
+// console.log(person1);
+
+// let person2 = {
+//     name : "jawad"
+// };
+// console.log(person2.hasOwnProperty('true')); //check wether name property is there in object
+
+// If we make a constructor function and write method inside it then this voilets dry, the code gets
+// repeaded to avoid this we have to make method out side constructor function and write it inside prototype
+
+// function Person(first, last, a){
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.age = a;
+// }
+
+// Person.prototype.fullName = function(){
+//     console.log(this.firstName + " " + this.lastName );
+// }
+
+// let person1 = new Person("jawad", "shaikh", 20);
+// let person2 = new Person("hamza", "shaikh", 21);
+
+// console.log(person1);
+// console.log(person2);
+// console.log(person1.fullName());
+// console.log(person2.fullName());
+
+// inheritence ES5
+
+// function Creature(ls){
+//     this.lifeSpan = ls;                                 //constructor function
+// }
+
+// Creature.prototype.breadth = function(){
+//     console.log("breathin");
+// }
+
+// let creature1 = new Creature(100);
+// console.log(creature1);
+
+// function Person(first, last, a){
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.age = a;
+// }
+
+// Person.prototype.fullName = function(){
+//     console.log(this.firstName + " " + this.lastName );
+// }
+
+// Person.prototype = Object.create(Creature.prototype); //replace
+// Person.prototype.__proto__ = Object.create(Creature.prototype); //connect
+// Person.prototype.__proto__ = Creature.prototype; //connect
+
+// let person1 = new Person("jawad", "shaikh", 20);
+// let person2 = new Person("hamza", "shaikh", 21);
+
+// console.log(person1);
+// console.log(person2);
+// console.log(person1.fullName());
+// console.log(person2.fullName());
+// console.log(person1.breadth());
+// console.log(person2.breadth());
+
+// class and object
+//in es6 class is replacing constructure function
+
+// class Person{
+//     constructor(n, a){                          //constructor function / method
+//         this.name = n;
+//         this.age = a;
+//     }
+
+//     sayHi(){                                     // prototype method (get attach to prototype)
+//         console.log("hi");
+//     }
+
+//     static sproperty = "something";              // static property (TO CALL USE CLAS NAME)
+
+
+//     static hello(){
+//         console.log("hello");                    //static method (To call use class name)
+//     }
+// }
+
+//we dont have to manually call constructor function it automatically calls when object is created
+
+// let person1 = new Person("jawad", 20);
+// person1.sayHi();             // automatically attach to prototype (till es5 we have to manually do this step)
+// console.log(person1);
+
+// static method does not get call by object but it get calls by class name
+// Person.hello();
+
+// console.log(Person.sproperty);
+
+// Inheritence in ES6
+// when we extend not only prototype but also property get connect (wholw class get copy)
+// class emp{
+//     constructor(n){
+//         this.name = n;
+//     }
+
+//     msg(){
+//         console.log("hello");
+//     }
+// }
+
+// class manager extends emp{                      // inherit
+
+    // whenever we are making constructor function in child class we have to  class super and pass the parameter 
+    // constructor(n,d){
+        // super(n);         // use = to call constructor of parent class
+    //     this.department = d;
+    // }
+
+    // msg(){
+    //     console.log("hi");
+    // }
+
+    // info(){
+        // super.msg();  // call msg method of parent class
+        // this.msg(); // call msg of same class
+//         console.log(this.name + " is manager of department " + this.department);
+//     }
+// }
+
+// class admin extends manager{
+    
+// }
+
+// let admin1 = new admin("jawad", 28); 
+// console.log(admin1);
+
+// let manager1 = new manager("jawad", "Web development");
+// console.log(manager1);
+// console.log(manager1.msg());
+// console.log(manager1.info());
+
+// public //private
+// class emp{
+//     constructor(n){
+//         this.name = n;
+//     }
+//     getName(){
+//         console.log(this.name);
+//     }
+
+// }
+
+// let emp1 = new emp("jawad");
+// console.log(emp1);
+// console.log(emp1.name); // public can be called 
+
+// class emp{
+//     #name = "";
+//     constructor(n){
+//         this.#name = n;
+//     }
+//     #getName(){
+//         console.log(this.#name);
+//     }
+//     pubfun(){
+//         this.#getName();
+//     }
+
+// }
+
+// let emp1 = new emp("jawad");
+// console.log(emp1);
+// console.log(emp1.#getName()); // private method cannot be called directly 
+// console.log(emp1.pubfun());
+
+// mixin
+
+// let usefullMethod  = {
+//     sayHi(){
+//         console.log("hi.....");
+//     },
+
+//     sayBye(){
+//         console.log("bye.....");
+//     }
+// };
+
+// let usefullMethod2  = {
+//     sayHi(){
+//         console.log("hi..");
+//     },
+
+//     sayBye(){
+//         console.log("bye..");
+//     }
+// };
+
+// class user{
+//     constructor(){
+//         this.name = "jawad";
+//     }
+// }
+
+// class admin extends user{
+    
+// }
+
+// let admin1 = new admin();
+// console.log(admin1);
+
+// Object.assign(user.prototype, usefullMethod);
+// Object.assign(admin.prototype, usefullMethod);   //mixin
+// Object.assign(admin.prototype, usefullMethod2);   //mixin
+
+// let user1 = new user();
+// console.log(user1);
+// console.log(user1.sayHi());
+// console.log(user1.sayBye());
+// console.log(admin1.sayHi());
+
+// Arrow function
+
+//NORMAL
+// function sum(a,b){
+//     return a+b;
+// }
+
+//arrow function
+// let sum2 = (a,b) => {
+//     return a+b;
+// }
+
+//for single line only
+// let sumA = (a,b) => a+b;
+
+// console.log(sum(2,3));
+// console.log(sum2(2,3));
+// console.log(sumA(2,3));
+
+// function random(){
+//    var x = Math.random();
+//    return x;
+// }
+// console.log(random());
+
+// let random1 = () => Math.random();
+// console.log(random1());
+
+
+// let double = (a) => 2*a;
+// if one parathesis
+// let double = a => 2*a;
+// console.log(double(10));
+
+
+//annanomys function
+// document.addEventListener('click', function(){
+//     console.log("clicked");
+// })
+
+// document.addEventListener('click', ()=> console.log("Arrow"));
+
+//callback function
+// function sayHello(){
+//     console.log("hello");
+// }
+// function sayHi(){
+//     console.log("hi");
+// }
+
+// function add(num1, num2, callback){
+    // sayHello();
+    // console.log(num1+num2);
+    // callback();
+    // sayHi();
+// }
+// add(2,4, sayHello);
+// add(21,41, sayHi);
+// add(21,41, function(){
+//     console.log("bye.");
+// });
+// add(21,41, ()=>{
+//     console.log("bye bye.");
+// });
+
+// map function
+// result of operation performed on all elements of array are stored in different array  
+
+//without map function
+// let arr = [2,3,4,5,6];
+// let arr1 = [];    // for storing
+
+// for(let i=0; i<arr.length; i++){
+//     arr1[i] = arr[i]*2;
+// }
+// console.log(arr1);
+
+//with map function
+
+//with ananomous function
+// let arr = [2,3,4,5,6];
+// let arr1 = arr.map(function(val){
+//     return val * 3;
+// });
+// console.log(arr1);
+
+// with arrow function
+// let arr = [2,3,4,5,6];
+// let arr1 = arr.map((val)=> val*3);
+// console.log(arr1);
+
+// filter function
+// let arr = [2,22,13,5,6,61,23,7];
+// result[22,13,61,23];
+// let arr1 = arr.filter(val => val<10);
+// console.log(arr1);
+
+// let team = [
+//     {
+//         name :"jawad",
+//         position : "Developer",
+//     },
+//     {
+//         name :"hamza",
+//         position : "Engineer",
+//     },
+//     {
+//         name :"faiz",
+//         position : "Developer",
+//     },
+//     {
+//         name :"shehzad",
+//         position : "ui/ux designer",
+//     },
+//     {
+//         name :"john",
+//         position : "admin",
+//     },
+//     {
+//         name:"doe",
+//         position:"Developer",
+//     }
+// ];
+
+// let Developer = team.filter(val => val.position == "Developer");
+// console.log(Developer);
