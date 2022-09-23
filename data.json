@@ -1,0 +1,13 @@
+{
+    "name" : "jawad",
+    "age" : 20,
+    "is_student" : true,
+    "passport_no" : null,
+    "prog_lang" : ["HTML", "CSS", "BOOTSTRAP","JAVSCRIPT"],
+    "Address" : {
+        "country" : "mumbai",
+        "state" : "mahrashtra",
+        "city" : "mumbai",
+        "pincode" : 400008
+    }
+}

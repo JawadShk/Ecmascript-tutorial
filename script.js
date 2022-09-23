@@ -642,3 +642,243 @@
 
 // let Developer = team.filter(val => val.position == "Developer");
 // console.log(Developer);
+
+// cookies
+// document.cookie = "item=milk; expires=Sat, 25 Sep 2022 12:00:00 UTC";
+// document.cookie = "item=milk,bread; expires=Sat, 25 Sep 2022 12:00:00 UTC";
+// document.cookie = "location= india";
+// let x = document.cookie;
+// alert(x);
+//deleting a cookie by giving past date
+// document.cookie = "item=milk,bread; expires=Sat, 15 Sep 2022 12:00:00 UTC";
+
+// web storage (local storage and session storage)
+// This method came after html5 before that dta used to stored in cookies
+// local storage 
+// localStorage.setItem('firstName','jawad');
+// localStorage.setItem('lastName','shaikh');
+
+// console.log(localStorage.getItem('lastName'));
+// localStorage.removeItem('firstName');
+
+//session storage 
+// sessionStorage.setItem('firstName', 'jawad');
+// console.log(sessionStorage.getItem('firstName', 'jawad'));
+// sessionStorage.removeItem('firstName');
+
+//json(javscript object notation)
+// json is text format for storing and transporting data
+//commonly used for API and config files
+// xml was used instead on json 
+// ten why json over xml
+// json is faster in term of data parsing
+// json is cleaner han xml
+//json is light weight than xml
+//easy to read and write
+
+//parse  json
+// let data = `{
+//     "name" : "jawad",
+//     "age" : 20,
+//     "is_student" : true,
+//     "passport_no" : null,
+//     "prog_lang" : ["HTML", "CSS", "BOOTSTRAP","JAVSCRIPT"],
+//     "Address" : {
+//         "country" : "mumbai",
+//         "state" : "mahrashtra",
+//         "city" : "mumbai",
+//         "pincode" : 400008
+//     }
+// }`;
+
+// let dataobj = JSON.parse(data);  //convert string to object
+// console.log(dataobj['is_student']);
+// console.log(dataobj['prog_lang'][2]);  //array
+// console.log(dataobj['Address']['city'])  //object
+
+//json string
+// let student = {
+//     name : "jawad",
+//     age : 20 ,
+//     city : "mumbai"
+// }
+// let Jdata = JSON.stringify(student);
+// console.log(Jdata);
+
+//promises
+// let complete = true;
+// function prom(complete){
+//     return new Promise(function(resolve, reject){
+//         console.log("pending please wait");
+//         setTimeout(() => {
+//             if(complete){
+//                 resolve("successful");
+//             }
+//             else{
+//                 reject("failed");
+//             } 
+//         }, 1000);
+//     }); 
+// } 
+
+// prom(true).then((result) => {
+//     console.log(result)
+// }).catch((error) => {
+//     console.log(error);
+// });
+
+// promise.all()
+
+// let p1 = new Promise( (resolve,reject) => {
+//     setTimeout( () => {
+//         console.log("1st promise resolved");
+//         resolve(10);
+//     },1000);
+// });
+
+// let p2 = new Promise( (resolve,reject) => {
+//     setTimeout( () => {
+//         console.log("2nd promise failed");
+//         reject(20);
+//     },2000);
+// });
+
+// let p3 = new Promise( (resolve,reject) => {
+//     setTimeout( () => {
+//         console.log("3rd promise resolved");
+//         resolve(30);
+//     },3000);
+// });
+
+// let total = 0;
+// Promise.all([p1,p2,p3]).then( (result) => {
+//     for(var i in result){
+//         total += result[i];
+//     }
+//     console.log(`Results: ${result}`);
+//     console.log(`total: ${total}`);
+// } ).catch( (error) => {
+//     console.log(`Error: ${error}`);
+// });
+
+
+// AJAX 
+// function loadData() {
+//     var xhttp = new XMLHttpRequest();
+
+//     xhttp.onreadystatechange = function(){
+//         if(this.readyState == 4 && this.status == 200){
+//             // console.log(this.responseText);
+//             document.getElementById('demo').innerHTML = this.responseText;
+//         }
+//     };
+
+//     xhttp.open('GET',"readme.txt",true);
+//     xhttp.send();
+// }
+
+//fetch reading data
+// fetch("https://jsonplaceholder.typicode.com/users")
+// .then(response => response.json())
+// .then(data => {
+//     for(let i in data){
+//         document.write(`${data[i].name} - ${data[i].email} - ${data[i].address.city}<br>`);
+//     }
+// })
+// .catch(error => console.log("Can't fetch data"));
+
+//fetch for server
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+//   //updating 
+  
+//   fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//   method: 'PUT',
+//   body: JSON.stringify({
+//     id: 1,
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+//   // DELETE
+
+//   fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//   method: 'DELETE',
+// });
+
+// real example
+// document.getElementById("saveForm").addEventListener("click",function(e){
+//     e.preventDefault();
+    // var obj ={
+    //     title : document.getElementById("titleText").value,
+    //     body : document.getElementById("bodyText").value,
+    //     user : document.getElementById("userid").value,
+    // };
+
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    // method: 'POST',
+    // body: JSON.stringify(obj),
+    // body : new FormData(document.getElementById("myForm")),
+    // headers: {
+        // 'Content-type': 'application/json; charset=UTF-8',
+        // 'Content-type': 'application/x-www-form-urlencoded',
+//     },
+// })
+// .then((response) => response.json())
+// .then((json) => console.log(json));
+// })
+
+//async await
+
+//normal
+// function test(){
+//     return "hello";
+// }
+// console.log(test());
+
+// async function
+// async function test(){
+//     return "hello";
+// }
+// test().then((result)=> console.log(result));
+
+//await
+// async function test(){
+//     try{
+//         const response = await fetch("student.json");
+//     const students = await response.json();
+
+//     return students;
+//     }catch(error){
+//         console.log("error");
+//     }
+    // const response = await fetch("student.json");
+    // const students = await response.json();
+
+    // return students;
+    // return (await fetch("student.json")).json();
+// }
+
+// test().then((res)=>{
+//     console.log(res);
+// });
