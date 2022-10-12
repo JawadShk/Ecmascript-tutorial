@@ -882,3 +882,120 @@
 // test().then((res)=>{
 //     console.log(res);
 // });
+
+// --------------------------------------------------------------------------------------------------- //
+
+// var name = "jawad";
+// console.log(name);
+
+// let name = "jawad";
+// console.log(name);
+
+// const name = "jawad";
+// console.log(name);
+
+// const name = "jawad";
+// name = "shaikh";
+// console.log(name);
+
+// function js(love){
+//     if(love){
+//         var name = "jawad";
+//         var sname = "shaikh";
+//     }
+//     console.log(`My Name is ${name} ${sname}`);
+// }
+
+// js(true);
+
+// var fav_country = "India";
+
+// if(true){
+//     var fav_country = "Pakistan"
+//     console.log(fav_country);
+// }
+
+// console.log(fav_country);
+
+// let fav_country = "India";
+
+// if(true){
+//     let fav_country = "Pakistan"
+//     console.log(fav_country);
+// }
+
+// console.log(fav_country);
+
+// document.getElementById("demo").innerText = "Jawad";
+// document.getElementById("demo").style.backgroundColor = "green";
+// document.getElementById("demo").style.color = "#fff";
+// document.getElementById("demo").style.textAlign = "center";
+// document.getElementById("demo").style.fontSize = "25px";
+// document.getElementById("demo").style.fontWeight = "900";
+// document.getElementById("demo").style.fontFamily = "ROBOTO";
+// document.getElementById("demo").style.padding = "25px";
+// document.getElementById("demo").style.margin = "25px";
+// document.getElementById("demo").style.borderRadius = "25px";
+// // document.getElementById("demo").style.border = "2px solid black";
+
+// let a = document.getElementById("demo");
+// a.style.border= "5px dashed black";
+
+// let a= document.getElementById("demo");
+// a = a.className;
+// a = a.childNodes;
+// a = a.parentNode;
+// a.style.color = ("green");
+// a.innerHTML = "<b>HI MY NAME IS JAWAD"
+// a.innerText = "<br>HI MY NAME IS JAWAD </br>"
+// let sel = document.querySelector('#demo');
+// sel = document.querySelector('child');
+// let sel = document.querySelector('.para');
+// let sel = document.querySelector("li");
+// let a = document.getElementsByClassName("child");
+// console.log(a[1]);
+
+// let a = document.getElementsByClassName("li");
+
+// for(let i = 0; i <a.length ; i++){
+//     console.log(a[i]);
+//     a[i].style.color = "red";
+// }
+
+// Array.from(a).forEach(element => {
+//     console.log(element);
+//     element.style.color = "red";
+// });
+
+// let a = document.querySelector("#container");
+// console.log(a.childNodes);
+// console.log(a.children);
+// console.log(a.childNodes[1].nodeName);
+// console.log(a.childNodes[0].nodeType); //1.element 2. attribute 3.text node 8.comment 9.documnet 10.doctype
+
+// let elm = document.createElement("li");
+// elm.className = "list";
+// elm.id = "list_id";
+// elm.setAttribute('title', 'myTitle');
+// elm.innerText = "hI";
+
+// console.log(elm);
+
+// let ul = document.querySelector("ul.li");
+// ul.appendChild(elm);
+// console.log(ul);
+
+// document.getElementById("demo").addEventListener("click", function(){
+//     console.log("clicked");
+//     // location.href = "https://www.google.co.in"
+// });
+
+// document.getElementById("demo").addEventListener("click", function(e){
+//     console.log("clicked");
+//     // console.log(e.target.className);
+//     console.log(e.target.classList);
+// });
+
+// document.getElementById("demo").addEventListener("mouseover", function(e){
+//     console.log("event occured");
+// });
